@@ -1,7 +1,8 @@
 import Image from "next/image";
-import Button from "./Button";
+import Button from "./Button/Button";
 import { Images } from "@/types";
 import Link from "next/link";
+import ButtonCopy from "./Button/ButtonCopy";
 
 interface Props {
     imageSrc: string;
@@ -23,8 +24,8 @@ const Card = ({
     images,
     url,
     linkTitle,
+    isVirtualTour = false,
     onImageClick,
-    ...rest
 }: Props) => {
     const renderImage = () => (
         <div
@@ -46,7 +47,6 @@ const Card = ({
         <Link
             className="cursor-pointer relative w-full h-60"
             href={url}
-            as="image"
             target="_self"
             title={linkTitle}
             type="button"
@@ -63,13 +63,19 @@ const Card = ({
 
     return (
         <div className="flex flex-col justify-between rounded-lg border-2 overflow-hidden transition-transform-shadow duration-500 ease-in-out transform hover:shadow-lg hover:-translate-y-2.5">
-            {pictureAs === "link" ? renderLink() : renderImage()}
+            {isVirtualTour ? renderLink() : renderImage()}
             <div className="p-4 flex justify-between bg-gray-100 h-fit">
                 <div className="flex flex-col gap-1/3 justify-center font-bold text-black">
                     <span className="text-base">{cardTitle}</span>
                     {images && <span className="text-xs">{images.length}</span>}
                 </div>
-                <Button text={btnText} url={url} {...rest} />
+                {isVirtualTour ? (
+                    <ButtonCopy link={url}>Copy link</ButtonCopy>
+                ) : (
+                    <Button as="link" url={url}>
+                        {btnText}
+                    </Button>
+                )}
             </div>
         </div>
     );
