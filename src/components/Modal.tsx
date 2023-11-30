@@ -43,11 +43,9 @@ const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 
     return (
         <div
-            className={`fixed z-50 top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center transition-opacity duration-500 opacity-${opacity}`}
+            className={`fixed z-50 top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center transition-opacity duration-500 opacity-${opacity} px-2`}
         >
-            <div ref={modalRef} className="bg-white p-6 rounded-lg">
-                {children}
-            </div>
+            <div ref={modalRef}>{children}</div>
         </div>
     );
 };

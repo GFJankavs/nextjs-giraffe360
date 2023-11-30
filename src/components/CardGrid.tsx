@@ -1,5 +1,3 @@
-"use client";
-
 import { ApartmentGridData, Images } from "@/types";
 import Card from "./Card";
 import { useState } from "react";
