@@ -1,8 +1,12 @@
-import { ApartmentGridData, Images } from "@/types";
-import Card from "./Card";
+"use client";
+
 import { useState } from "react";
+
+import Card from "./Card";
 import Modal from "./Modal";
 import ImageGallery from "./ImageGallery";
+
+import { ApartmentGridData, Images } from "@/types";
 
 interface Props {
     gridData: ApartmentGridData;

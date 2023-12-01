@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Button from "./Button";
+
 import Tooltip from "../Tooltip";
+
+import Button from "./Button";
 
 interface Props {
     children: React.ReactNode;

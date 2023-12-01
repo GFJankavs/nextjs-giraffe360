@@ -19,6 +19,9 @@ const config: Config = {
         white: '#ffffff',
         black: '#000000',
       },
+      width: {
+        inherit: 'inherit',
+      },
       animation: {
         "appear": "rise 0.5s ease-in-out",
         "fall": "fall 0.5s ease-in-out",

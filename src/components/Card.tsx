@@ -1,8 +1,11 @@
+/* eslint-disable max-len */
 import Image from "next/image";
-import Button from "./Button/Button";
-import { Images } from "@/types";
 import Link from "next/link";
+
+import Button from "./Button/Button";
 import ButtonCopy from "./Button/ButtonCopy";
+
+import { Images } from "@/types";
 
 interface Props {
     imageSrc: string;
